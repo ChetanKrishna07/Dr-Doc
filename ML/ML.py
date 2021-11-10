@@ -1,12 +1,23 @@
+import csv
 import pandas as pd
-import sklearn
+from sklearn.preprocessing import LabelEncoder
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 
-df1 = pd.read_csv('C:/Users/Arjun/Downloads/Dataset/Symptom.csv')
-df2 = pd.read_csv('C:/Users/Arjun/Downloads/Dataset/Symptom Description.csv')
-df3 = pd.read_csv('C:/Users/Arjun/Downloads/Dataset/Symptom Precaution.csv')
-df4 = pd.read_csv('C:/Users/Arjun/Downloads/Dataset/Symptom Severity.csv')
+f = open('Symptom.csv')
+arr = list()
+csv_f = csv.reader(f)
+for row in csv_f:
+    arr.append(row[0])
+f.close()
+arr.remove('Disease')
+for i in range(len(arr)):
+    print(arr[i])
+
+df1 = pd.read_csv('Symptom.csv')
+df2 = pd.read_csv('Symptom Description.csv')
+df3 = pd.read_csv('Symptom Precaution.csv')
+df4 = pd.read_csv('Symptom Severity.csv')
 
 combined_df = pd.merge(df1, df2, on = 'Disease')
 combined_df = pd.merge(combined_df , df3, on = 'Disease')
