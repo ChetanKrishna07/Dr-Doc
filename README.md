@@ -38,5 +38,5 @@ To create a platform where patients can match doctors depending on their illness
 ## Instructions
 
 - Clone the project
-- Initialize with npm i
-- The start the project with npm start
+- Initialize with <b>"npm i"</b>
+- The start the project with <b>"npm start"</b>
