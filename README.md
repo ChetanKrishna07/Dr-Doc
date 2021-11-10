@@ -1,4 +1,4 @@
-# dr-doc-react
+# Dr-Doc
 <h1 align="center"> Dr. Doc </h1>
 
 ## Introduction
