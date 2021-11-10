@@ -34,3 +34,9 @@ To create a platform where patients can match doctors depending on their illness
 |1| Chetan Krishna  | 20BCE0330     |
 |2| Bhavesh Sree Sai     | 20BCE0348     |
 |3| Arjun Das       | 20BDS0129     |
+
+## Instructions
+
+- Clone the project
+- Initialize with npm i
+- The start the project with npm start
