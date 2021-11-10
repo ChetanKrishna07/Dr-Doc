@@ -11,11 +11,15 @@ To create a platform where patients can match doctors depending on their illness
 - HTML
 - CSS
 - JavaScript
+- React
+- React Bootstrap
 
 #### Back End
 - EJS
 - Flask
-- noSQL
+- mongoDB
+- express
+- mongoose
 
 #### Machine Learning
 - Python
