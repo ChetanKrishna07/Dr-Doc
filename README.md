@@ -31,7 +31,7 @@ To create a platform where patients can match doctors depending on their illness
 
 |Sl.No.  | Name  | Registration No. |
 |-| ------------- |:-------------:|
-|1| Chetan Krishna  | 20BCE0330     |
+|1| Chetan Krishna  | 20BCE0338     |
 |2| Bhavesh Sree Sai     | 20BCE0348     |
 |3| Arjun Das       | 20BDS0129     |
 
