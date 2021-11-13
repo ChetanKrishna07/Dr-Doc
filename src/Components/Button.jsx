@@ -3,6 +3,7 @@ import { Button } from 'react-bootstrap'
 
 
 const MyButton = (props) => {
+
     const buttonStyle = {
         backgroundColor: props.color,
         border: "none",
@@ -13,6 +14,7 @@ const MyButton = (props) => {
         fontWeight: 600,
         marginBottom: 30
     }
+
     return (
         <div style={{ display: "flex", justifyContent: "center" }}>
             <Button style={buttonStyle} onClick={props.handleClick}>{props.text}</Button>

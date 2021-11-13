@@ -1,10 +1,20 @@
 import React from 'react';
-import './MainLogo.css'
 
 const MainLogo = (props) => {
+
+    const mainLogo = {
+        display: 'flex',
+        justifyContent: 'center',
+        marginTop: '60px'
+    }
+
+    const logoImg = {
+        height: '80px'
+    }
+
     return (
-        <div class="main-logo">
-            <img src={props.src} alt='Logo' />
+        <div style={mainLogo}>
+            <img src={props.src} alt='Logo' style={logoImg} />
         </div>
     )
 }

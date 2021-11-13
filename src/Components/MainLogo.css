@@ -1,9 +1,0 @@
-.main-logo {
-  display: flex;
-  justify-content: center;
-  margin-top: 60px;
-}
-
-.main-logo > img {
-  height: 80px;
-}

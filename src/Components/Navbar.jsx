@@ -1,11 +1,16 @@
 import React from 'react';
 import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap';
-import './Navbar.css'
+import Colors from '../colorsPallate'
 
 const Navigation = () => {
+
+    const navbar = {
+        boxShadow: '0px 2px 8px rgba(97, 97, 97, 0.25)',
+        backgroundColor: Colors.bg
+    }
     return (
         <>
-            <Navbar collapseOnSelect  expand='sm' className='navbar'>
+            <Navbar collapseOnSelect expand='sm' style={navbar}>
                 <Container>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">

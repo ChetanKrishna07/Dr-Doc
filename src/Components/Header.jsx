@@ -1,10 +1,11 @@
 import React from 'react';
-import './Header.css'
 import Colors from '../colorsPallate'
 
 const Header = (props) => {
 
     const customStyles = {
+        fontFamily: "Source Sans Pro",
+        textAlign: 'center',
         fontWeight: 600,
         marginTop: 100,
         marginBottom: 70,
