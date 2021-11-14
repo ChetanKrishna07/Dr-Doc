@@ -58,6 +58,7 @@ function App() {
           handleClick={deleteItem}
         />
       ))}
+      <Store />
       <Footer />
 
     </div>

@@ -126,7 +126,7 @@ const Footer = () => {
                 <p>Copyright &copy; 2021 <br />
                     dr.doc</p>
             </div>
-        </div >
+        </div>
     )
 }
 
