@@ -58,7 +58,10 @@ function App() {
           handleClick={deleteItem}
         />
       ))}
-      <Store />
+      <Store storeName="Apollo Pharmacy" available="3" unavailable="2"/>
+      <Store storeName="Medplus" available="2" unavailable="3"/>
+      <Store storeName="JSS" available="1" unavailable="4"/>
+      <Store storeName="ESI Pharmacy" available="1" unavailable="4"/>
       <Footer />
 
     </div>
