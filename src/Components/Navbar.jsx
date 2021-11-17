@@ -8,21 +8,26 @@ const Navigation = () => {
         boxShadow: '0px 2px 8px rgba(97, 97, 97, 0.25)',
         backgroundColor: Colors.bg
     }
+
+    const navItems = {
+        color: Colors.tertiary
+    }
+
     return (
         <>
             <Navbar collapseOnSelect expand='sm' style={navbar}>
                 <Container>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
-                        <Nav className='navItems'>
-                            <Nav.Link href="#home">Home</Nav.Link>
-                            <NavDropdown title="Services" id="responsive-nav-dropdown">
-                                <NavDropdown.Item href="#services/#doctor">Find Doctor</NavDropdown.Item>
-                                <NavDropdown.Item href="#services/#medicine">Medicines</NavDropdown.Item>
-                                <NavDropdown.Item href="#services/#diagnostics">Diagnostics</NavDropdown.Item>
+                        <Nav>
+                            <Nav.Link href="#home" style={navItems}>Home</Nav.Link>
+                            <NavDropdown title={<span style={navItems}>Services</span>} id="responsive-nav-dropdown">
+                                <NavDropdown.Item href="#services/#doctor" style={navItems}>Find Doctor</NavDropdown.Item>
+                                <NavDropdown.Item href="/medicines" style={navItems}>Medicines</NavDropdown.Item>
+                                <NavDropdown.Item href="/diagnostics" style={navItems}>Diagnostics</NavDropdown.Item>
                             </NavDropdown>
-                            <Nav.Link href="#about">About Us</Nav.Link>
-                            <Nav.Link href="#support">Support</Nav.Link>
+                            <Nav.Link href="#about" style={navItems}>About Us</Nav.Link>
+                            <Nav.Link href="#support" style={navItems}>Support</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

@@ -4,20 +4,20 @@ import Colors from '../colorsPallate'
 const Store = (props) => {
 
     const [showInfo, setShow] = React.useState(false)
-
     const headerStyles = {
         backgroundColor: Colors.bg,
         display: 'flex',
         width: '70%',
         height: '60px',
         margin: 'auto',
-        borderRadius: '25px',
+        borderRadius: showInfo ? '15px 15px 0px 0px' : '15px',
         alignItems: 'center',
         padding: '0px 25px 0px 25px',
         justifyContent: 'space-between',
         boxShadow: '4px 4px 4px rgba(0, 0, 0, 0.25), -4px -4px 4px rgba(255, 255, 255, 0.65)',
         marginTop: '20px',
-        cursor: 'pointer'
+        cursor: 'pointer', 
+        transition: '0.3s'
     }
 
     const available = {
@@ -63,12 +63,12 @@ const Store = (props) => {
         width: '70%',
         height: showInfo ? '200px' : '0px',
         margin: 'auto',
-        borderRadius: '25px',
+        borderRadius: showInfo ? '0px 0px 15px 15px' : '15px',
         alignItems: 'center',
         padding: '0px 25px 0px 25px',
         justifyContent: 'space-between',
-        boxShadow: '4px 4px 4px rgba(0, 0, 0, 0.25), -4px -4px 4px rgba(255, 255, 255, 0.65)',
-        marginTop: showInfo ? '30px' : '10px',
+        boxShadow: '4px 4px 4px rgba(0, 0, 0, 0.25), -4px 0px 4px rgba(255, 255, 255, 0.65)',
+        marginTop: showInfo ? '10px' : '10px',
         marginBottom: showInfo ? '30px' : '0px',
         cursor: 'pointer',
         transition: '0.3s'
