@@ -37,6 +37,8 @@ To create a platform where patients can match doctors depending on their illness
 
 ## Instructions
 
+- Make sure you installed node.js
 - Clone the project
-- Initialize with <b>"npm install"</b>
-- The start the project with <b>"npm start"</b>
+- Enter the following command in your terminal
+- <b>npm install</b>
+- <b>"npm start"</b>
