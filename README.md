@@ -3,7 +3,8 @@
 
 ## Introduction
 
-A platform where patients can find doctors depending on their illness. A doctor can send prescriptions to patients and a patient can send their medical history to doctors. These medical histories are also stored in the patients' database, so other doctors can view them during examination and treatment of the patient. There will be unique accounts for doctors as well as for patient, linked with their email and/or phone number. It is an ML based system, where a patient can find out what doctors they have to consult. This consultation will be provided after the patients input their symptoms and problems. Patients can find pharmacies to buy medicines, and diagnostic centers to get their tests done in the same platform, making it holistic.
+Dr. Doc is a platform where patients can find doctors and cure themselves to their diseases. This platform also have a feature recommending the specialist for their problem if patient doesn't know to whom they need to consult. This platform also facilitates the information regarding the diagnostic centers with the diagnosis they facilitate, also gives information about the medicines in which medical shop they can find their medicines.
+There will be unique account for patients and doctors linked with their email and/or phone number. By the ML model, with symptoms as input from patients, patients can find out which doctor they need to consult. 
 
 ## Tools Used
 
