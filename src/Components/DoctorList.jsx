@@ -1,13 +1,26 @@
 import React from 'react'
 import Colors from '../colorsPallate'
 
-const Store = (props) => {
+const DoctorList = (props) => {
 
-    let medicinesAvail = ['Med 1', 'Med 2', 'Med 3']
-    let medicinesUnavail = ['Med 4', 'Med 5']
     let address = ['flat # 102, Classic Avenue', 'Street # 4, Czech Colony', 'Sanathnagar', 'Hyderbad - 500018']
     let phone = '+919999999999'
     let website = 'www.superdoc.com'
+    let specialization = "Cardialogit"
+    let education = ["MBBS, KMC", ["DMC Royal College of Liverpool"]]
+    let online = props.online
+    let offline = props.offline
+    let status = ""
+
+    if(online && offline) {
+        status = "Online and Offline"
+    } else if (online) {
+        status = "Only Online"
+    } else if(offline) {
+        status = "Only Offline"
+    } else {
+        status = "Unavailable"
+    }
     const [showInfo, setShow] = React.useState(false)
     const headerStyles = {
         backgroundColor: Colors.bg,
@@ -26,18 +39,11 @@ const Store = (props) => {
         overflowX: 'auto'
     }
 
-    const available = {
-        color: Colors.secondary,
+    const statusStyle = {
+        color: Colors.primary,
         fontWeight: 600,
         fontSize: '1.08em',
         marginRight: '15px',
-        display: 'flex'
-    }
-
-    const unavailable = {
-        color: Colors.tertiary,
-        fontWeight: 600,
-        fontSize: '1.08em',
         display: 'flex'
     }
 
@@ -46,32 +52,11 @@ const Store = (props) => {
         fontSize: '1.08em',
         display: 'flex'
     }
-    const Anum = {
-        border: '3px solid',
-        borderColor: Colors.secondary,
-        width: '27px',
-        height: '27px',
-        marginLeft: '5px',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center'
-    }
-
-    const Unum = {
-        border: '3px solid',
-        borderColor: Colors.tertiary,
-        width: '27px',
-        height: '27px',
-        marginLeft: '5px',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center'
-    }
 
     const infoStyle = {
         backgroundColor: Colors.bg,
         display: 'grid',
-        gridTemplateColumns: '1fr 1fr 1fr 1fr',
+        gridTemplateColumns: '1fr 1fr 1fr',
         width: '70%',
         height: showInfo ? '200px' : '0px',
         margin: 'auto',
@@ -88,17 +73,16 @@ const Store = (props) => {
         textAlign: 'left'
     }
 
-    const infoAvailable = {
+    const infoAddress = {
         gridColumn: '1/2',
         display: 'flex',
         alignContent: 'flex-start',
-        width: '100%',
         height: '100%',
         paddingTop: '25px',
         flexDirection: 'column'
     }
 
-    const infoUnavailable = {
+    const infoPhWeb = {
         gridColumn: '2/3',
         display: 'flex',
         alignContent: 'flex-start',
@@ -108,17 +92,8 @@ const Store = (props) => {
         flexDirection: 'column'
     }
 
-    const infoAddress = {
+    const infoSpEd = {
         gridColumn: '3/4',
-        display: 'flex',
-        alignContent: 'flex-start',
-        height: '100%',
-        paddingTop: '25px',
-        flexDirection: 'column'
-    }
-
-    const infoPhWeb = {
-        gridColumn: '4/5',
         display: 'flex',
         alignContent: 'flex-start',
         width: '100%',
@@ -140,25 +115,12 @@ const Store = (props) => {
                     return !prevVal
                 })
             }}>
-                <h1 style={{ fontSize: '1.4em', fontWeight: 600 }}>{props.storeName}</h1>
+                <h1 style={{ fontSize: '1.4em', fontWeight: 600 }}>{props.doctorName}</h1>
                 <div style={{ display: 'flex' }}>
-                    <div style={available}>Available: <div style={Anum}>{props.available}</div></div>
-                    <div style={unavailable}>Unavailable: <div style={Unum}>{props.unavailable}</div></div>
+                    <div style={statusStyle}>{status}</div>
                 </div>
             </div>
             <div style={infoStyle}>
-                <div style={infoAvailable}>
-                    <h1 style={available}>Available :</h1>
-                    {props.availableList.map((med) => {
-                        return <p>{med}</p>
-                    })}
-                </div>
-                <div style={infoUnavailable}>
-                    <h1 style={unavailable}>Unavailable :</h1>
-                    {props.unavailableList.map((med) => {
-                        return <p>{med}</p>
-                    })}
-                </div>
                 <div style={infoAddress}>
                     <h1 style={headings}>Address :</h1>
                     {address.slice(0, -1).map((med) => {
@@ -172,9 +134,17 @@ const Store = (props) => {
                     <h1 style={headings}>Website :</h1>
                     {website}
                 </div>
+                <div style={infoSpEd}>
+                    <h1 style={headings}>Specialization :</h1>
+                    <p>{specialization}</p>
+                    <h1 style={headings}>Education :</h1>
+                    {education.map((edd) => {
+                        return <p style={addLine}>{edd},</p>
+                    })}
+                </div>
             </div>
         </div>
     )
 }
 
-export default Store
+export default DoctorList
