@@ -18,8 +18,7 @@ const Input = (props) => {
 
     const input = {
         fontFamily: "Source Sans Pro",
-        backgroundColor: Colors.bg,
-        boxShadow: 'inset 2px 2px 2px rgba(0, 0, 0, 0.158), inset - 2px -2px 2px rgba(202, 202, 202, 0.25)'
+        backgroundColor: Colors.bg
     }
 
     return (
