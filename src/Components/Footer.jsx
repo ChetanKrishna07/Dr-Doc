@@ -17,7 +17,7 @@ const Footer = () => {
         display: 'grid',
         gridTemplateColumns: 'repeat(3, 1fr)',
         gridTemplateRows: 'repeat(3, 1fr)',
-        marginTop: '100px'
+        marginTop: '200px'
     }
 
     const leftStyle = {

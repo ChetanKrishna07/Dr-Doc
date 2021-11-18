@@ -1,8 +1,14 @@
 import React from 'react'
+import { resolvePath } from 'react-router'
 import Colors from '../colorsPallate'
 
 const Store = (props) => {
 
+    let medicinesAvail = ['Med 1', 'Med 2', 'Med 3']
+    let medicinesUnavail = ['Med 4', 'Med 5']
+    let address = ['flat # 102, Classic Avenue', 'Street # 4, Czech Colony', 'Sanathnagar', 'Hyderbad - 500018']
+    let phone = '+919999999999'
+    let website = 'www.superdoc.com'
     const [showInfo, setShow] = React.useState(false)
     const headerStyles = {
         backgroundColor: Colors.bg,
@@ -16,8 +22,9 @@ const Store = (props) => {
         justifyContent: 'space-between',
         boxShadow: '4px 4px 4px rgba(0, 0, 0, 0.25), -4px -4px 4px rgba(255, 255, 255, 0.65)',
         marginTop: '20px',
-        cursor: 'pointer', 
-        transition: '0.3s'
+        cursor: 'pointer',
+        transition: '0.3s',
+        overflowX: 'auto'
     }
 
     const available = {
@@ -35,6 +42,11 @@ const Store = (props) => {
         display: 'flex'
     }
 
+    const headings = {
+        fontWeight: 600,
+        fontSize: '1.08em',
+        display: 'flex'
+    }
     const Anum = {
         border: '3px solid',
         borderColor: Colors.secondary,
@@ -59,7 +71,8 @@ const Store = (props) => {
 
     const infoStyle = {
         backgroundColor: Colors.bg,
-        display: 'flex',
+        display: 'grid',
+        gridTemplateColumns: '1fr 1fr 1fr 1fr',
         width: '70%',
         height: showInfo ? '200px' : '0px',
         margin: 'auto',
@@ -71,8 +84,55 @@ const Store = (props) => {
         marginTop: showInfo ? '10px' : '10px',
         marginBottom: showInfo ? '30px' : '0px',
         cursor: 'pointer',
-        transition: '0.3s'
+        transition: '0.3s',
+        overflow: 'auto',
+        textAlign: 'left'
     }
+
+    const infoAvailable = {
+        gridColumn: '1/2',
+        display: 'flex',
+        alignContent: 'flex-start',
+        width: '100%',
+        height: '100%',
+        paddingTop: '25px',
+        flexDirection: 'column'
+    }
+
+    const infoUnavailable = {
+        gridColumn: '2/3',
+        display: 'flex',
+        alignContent: 'flex-start',
+        width: '100%',
+        height: '100%',
+        paddingTop: '25px',
+        flexDirection: 'column'
+    }
+
+    const infoAddress = {
+        gridColumn: '3/4',
+        display: 'flex',
+        alignContent: 'flex-start',
+        height: '100%',
+        paddingTop: '25px',
+        flexDirection: 'column'
+    }
+
+    const infoPhWeb = {
+        gridColumn: '4/5',
+        display: 'flex',
+        alignContent: 'flex-start',
+        width: '100%',
+        height: '100%',
+        paddingTop: '25px',
+        flexDirection: 'column'
+    }
+
+    const addLine = {
+        fontSize: '0.8em',
+        margin: '0px'
+    }
+
 
     return (
         <div>
@@ -88,7 +148,31 @@ const Store = (props) => {
                 </div>
             </div>
             <div style={infoStyle}>
-
+                <div style={infoAvailable}>
+                    <h1 style={available}>Available :</h1>
+                    {props.availableList.map((med) => {
+                        return <p>{med}</p>
+                    })}
+                </div>
+                <div style={infoUnavailable}>
+                    <h1 style={unavailable}>Unavailable :</h1>
+                    {props.unavailableList.map((med) => {
+                        return <p>{med}</p>
+                    })}
+                </div>
+                <div style={infoAddress}>
+                    <h1 style={headings}>Address :</h1>
+                    {address.slice(0, -1).map((med) => {
+                        return <p style={addLine}>{med},</p>
+                    })}
+                    <p style={addLine}>{address.slice(-1)}</p>
+                </div>
+                <div style={infoPhWeb}>
+                    <h1 style={headings}>Phone number :</h1>
+                    <p>{phone}</p>
+                    <h1 style={headings}>Website :</h1>
+                    {website}
+                </div>
             </div>
         </div>
     )

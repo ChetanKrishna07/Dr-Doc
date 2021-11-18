@@ -55,10 +55,10 @@ const Medicines = () => {
                     handleClick={deleteItem}
                 />
             ))}
-            <Store storeName="Apollo Pharmacy" available="3" unavailable="2" />
-            <Store storeName="Medplus" available="2" unavailable="3" />
-            <Store storeName="JSS" available="1" unavailable="4" />
-            <Store storeName="ESI Pharmacy" available="1" unavailable="4" />
+            <Store storeName="Apollo Pharmacy" available="3" unavailable="2" availableList = {['med 1', 'med 2', 'med 3']} unavailableList = {['med 4', 'med 5']}/>
+            <Store storeName="Medplus" available="2" unavailable="3" availableList = {['med 1', 'med 2']} unavailableList = {['med 3', 'med 4', 'med 5']}/>
+            <Store storeName="JSS" available="1" unavailable="4" availableList = {['med 1']} unavailableList = {['med 2', 'med 3', 'med 4', 'med 5']}/>
+            <Store storeName="ESI Pharmacy" available="1" unavailable="4" availableList = {['med 2']} unavailableList = {['med 1','med 3','med 4', 'med 5']}/>
         </div>
     );
 }
