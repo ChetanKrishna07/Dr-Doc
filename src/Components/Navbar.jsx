@@ -22,7 +22,7 @@ const Navigation = () => {
                         <Nav>
                             <Nav.Link href="#home" style={navItems}>Home</Nav.Link>
                             <NavDropdown title={<span style={navItems}>Services</span>} id="responsive-nav-dropdown">
-                                <NavDropdown.Item href="#services/#doctor" style={navItems}>Find Doctor</NavDropdown.Item>
+                                <NavDropdown.Item href="/doctors" style={navItems}>Find Doctor</NavDropdown.Item>
                                 <NavDropdown.Item href="/medicines" style={navItems}>Medicines</NavDropdown.Item>
                                 <NavDropdown.Item href="/diagnostics" style={navItems}>Diagnostics</NavDropdown.Item>
                             </NavDropdown>
