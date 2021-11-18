@@ -37,7 +37,7 @@ A platform where patients can find doctors depending on their illness. A doctor 
 
 ## Instructions to view the project
 
-- Make sure you installed `node.js` on your pc
+- Make sure you installed [`node.js`](https://nodejs.org/en/) on your pc
 - Clone the project
 - Go to the project folder
 - Enter the following command in your terminal :
