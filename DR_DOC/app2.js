@@ -3,7 +3,8 @@ const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const mongoose = require('mongoose');
 const app = express();
-
+const credentials = require('./credentials');
+const {username, password} = credentials;
 app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({
@@ -12,7 +13,7 @@ app.use(bodyParser.urlencoded({
 app.use(express.static("public"));
 
 mongoose.connect(
-    "mongodb+srv://Bhavesh:v%401b%402h%233@cluster0.ezrij.mongodb.net/Diagnostic?retryWrites=true&w=majority", 
+    "mongodb+srv://"+username+":"+password+"@cluster0.ezrij.mongodb.net/Diagnostic?retryWrites=true&w=majority", 
   {
     useNewUrlParser: true
   },(err)=>{
