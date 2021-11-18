@@ -56,10 +56,10 @@ const Diagnostics = () => {
                     handleClick={deleteItem}
                 />
             ))}
-            <Store storeName="Apollo Diagnostics" available="3" unavailable="2" availableList = {['test 1', 'test 2', 'test 3']} unavailableList = {['test 4', 'test 5']}/>
-            <Store storeName="Vijaya Diagnostics" available="2" unavailable="3" availableList = {['test 1', 'test 2']} unavailableList = {['test 3', 'test 4', 'test 5']}/>
-            <Store storeName="JSS" available="1" unavailable="4" availableList = {['test 1']} unavailableList = {['test 2', 'test 3', 'test 4', 'test 5']}/>
-            <Store storeName="Anand's Lab" available="1" unavailable="4" availableList = {['test 2']} unavailableList = {['test 1','test 3','test 4', 'test 5']}/>
+            <Store storeName="Apollo Diagnostics" available="3" unavailable="2" availableList={['test 1', 'test 2', 'test 3']} unavailableList={['test 4', 'test 5']} />
+            <Store storeName="Vijaya Diagnostics" available="2" unavailable="3" availableList={['test 1', 'test 2']} unavailableList={['test 3', 'test 4', 'test 5']} />
+            <Store storeName="JSS" available="1" unavailable="4" availableList={['test 1']} unavailableList={['test 2', 'test 3', 'test 4', 'test 5']} />
+            <Store storeName="Anand's Lab" available="1" unavailable="4" availableList={['test 2']} unavailableList={['test 1', 'test 3', 'test 4', 'test 5']} />
 
         </div>
     );
