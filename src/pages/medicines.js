@@ -6,6 +6,7 @@ import Input from '../Components/Input'
 import Button from '../Components/Button'
 import Medicine from '../Components/MedicineList'
 import Store from '../Components/Store'
+import axios from 'axios'
 
 import LogoSrc from '../images/main_logo.png'
 import Colors from '../colorsPallate'
@@ -13,6 +14,36 @@ import Colors from '../colorsPallate'
 const Medicines = () => {
     const [medicines, updateMedicines] = React.useState([])
     const [inputText, setInput] = React.useState("")
+    const [stores, updateStores] = React.useState([])
+
+    const apiConfig = {
+        method: 'GET',
+        url: 'https://localhost:2000/store'
+    };
+
+    var data = JSON.stringify({
+        'meds': '["med 1", "med 2", "med 3"]'
+    });
+    var config = {
+        method: 'get',
+        url: 'http://localhost:2000/store',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        data: data
+    };
+
+    async function getStores() {
+        await axios({
+            config
+        })
+            .then(res => console.log(res.data))
+            .catch(err => console.log(err))
+    }
+
+    async function updateStoreList() {
+        await getStores()
+    }
 
     function addMedicine() {
         if (inputText != "") {
@@ -21,6 +52,7 @@ const Medicines = () => {
             })
             setInput("")
         }
+        updateStoreList()
     }
 
     function inputChange(event) {
@@ -55,10 +87,16 @@ const Medicines = () => {
                     handleClick={deleteItem}
                 />
             ))}
-            <Store storeName="Apollo Pharmacy" available="3" unavailable="2" availableList = {['med 1', 'med 2', 'med 3']} unavailableList = {['med 4', 'med 5']}/>
-            <Store storeName="Medplus" available="2" unavailable="3" availableList = {['med 1', 'med 2']} unavailableList = {['med 3', 'med 4', 'med 5']}/>
-            <Store storeName="JSS" available="1" unavailable="4" availableList = {['med 1']} unavailableList = {['med 2', 'med 3', 'med 4', 'med 5']}/>
-            <Store storeName="ESI Pharmacy" available="1" unavailable="4" availableList = {['med 2']} unavailableList = {['med 1','med 3','med 4', 'med 5']}/>
+            {stores.map((store, index) => (
+                <Store
+                    key={index}
+                    storeName={store.name}
+                    available={store.available}
+                    unavailable={store.unavailable}
+                    availableList={store.availableList}
+                    unavailableList={store.unavailableList}
+                />
+            ))}
         </div>
     );
 }
