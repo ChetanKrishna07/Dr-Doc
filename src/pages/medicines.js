@@ -21,21 +21,9 @@ const Medicines = () => {
         url: 'https://localhost:2000/store'
     };
 
-    var data = JSON.stringify({
-        'meds': '["med 1", "med 2", "med 3"]'
-    });
-    var config = {
-        method: 'get',
-        url: 'http://localhost:2000/store',
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
-        },
-        data: data
-    };
-
     async function getStores() {
         await axios({
-            config
+            ...config, data: { meds: medicines }
         })
             .then(res => console.log(res.data))
             .catch(err => console.log(err))
