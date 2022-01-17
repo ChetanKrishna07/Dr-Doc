@@ -35,7 +35,6 @@ const Medicines = () => {
     function addMedicine() {
         if (inputText != "") {
             updateMedicines([...medicines, inputText])
-            console.log(medicines);
             setInput("")
         }
     }
