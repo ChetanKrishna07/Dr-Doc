@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../App.css';
 import MainLogo from '../Components/MainLogo'
 import Header from '../Components/Header'
@@ -16,31 +16,28 @@ const Medicines = () => {
     const [inputText, setInput] = React.useState("")
     const [stores, updateStores] = React.useState([])
 
+    React.useEffect(() => {
+        console.log(medicines);
+        updateStoreList()
+    }, [medicines])
+
     const apiConfig = {
-        method: 'GET',
-        url: 'https://localhost:2000/store'
+        method: 'POST',
+        url: 'http://localhost:2000/store'
     };
 
-    async function getStores() {
-        await axios({
-            ...config, data: { meds: medicines }
-        })
-            .then(res => console.log(res.data))
-            .catch(err => console.log(err))
-    }
-
     async function updateStoreList() {
-        await getStores()
+        await axios({ ...apiConfig, data: { "meds": medicines } })
+            .then(res => updateStores(res.data))
+            .catch(err => console.log(err))
     }
 
     function addMedicine() {
         if (inputText != "") {
-            updateMedicines((prevMedicines) => {
-                return [...prevMedicines, inputText];
-            })
+            updateMedicines([...medicines, inputText])
+            console.log(medicines);
             setInput("")
         }
-        updateStoreList()
     }
 
     function inputChange(event) {
@@ -49,11 +46,7 @@ const Medicines = () => {
 
     function deleteItem(index) {
         console.log(index)
-        updateMedicines((prevMedicines) => {
-            return prevMedicines.filter((medicine, idx) => {
-                return idx != index
-            });
-        })
+        updateMedicines(medicines.filter((medicine, idx) => idx != index))
     }
 
     return (

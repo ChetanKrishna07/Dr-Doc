@@ -132,7 +132,6 @@ const Store = (props) => {
         margin: '0px'
     }
 
-
     return (
         <div>
             <div style={headerStyles} onClick={() => {
