@@ -38,13 +38,14 @@ const Medicines = () => {
                 type="text"
                 value={inputText}
                 handleChange={inputChange}
+                handleKeyDown={(e) => e.key === "Enter" ? changeSpecialist() : null}
             />
             <Button text="Search" color={Colors.primary} handleClick={changeSpecialist} />
             {specialist != "" && <h1 style={doctorStyle}>{specialist}</h1>}
-            <Doctor doctorName="Dr. Singh" online = {true} offline = {true}/>
-            <Doctor doctorName="Dr. Siri" online = {false} offline = {true}/>
-            <Doctor doctorName="Dr. Kiran" online = {true} offline = {false}/>
-            <Doctor doctorName="Dr. Vijay" online = {false} offline = {false}/>
+            <Doctor doctorName="Dr. Singh" online={true} offline={true} />
+            <Doctor doctorName="Dr. Siri" online={false} offline={true} />
+            <Doctor doctorName="Dr. Kiran" online={true} offline={false} />
+            <Doctor doctorName="Dr. Vijay" online={false} offline={false} />
         </div>
     );
 }

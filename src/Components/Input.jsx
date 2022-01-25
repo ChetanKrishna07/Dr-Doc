@@ -30,6 +30,7 @@ const Input = (props) => {
                 placeholder={props.placeholder}
                 onChange={props.handleChange}
                 value={props.value}
+                onKeyDown={props.handleKeyDown}
             />
         </div>
     )

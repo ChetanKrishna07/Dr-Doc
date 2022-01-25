@@ -44,7 +44,7 @@ const Diagnostics = () => {
         }
     ])
 
-    function addMedicine() {
+    function addDiagnostics() {
         if (inputText != "") {
             updateDiagnostics((prevDiagnostics) => {
                 return [...prevDiagnostics, inputText];
@@ -76,8 +76,9 @@ const Diagnostics = () => {
                 type="text"
                 value={inputText}
                 handleChange={inputChange}
+                handleKeyDown={(e) => e.key === "Enter" ? addDiagnostics() : null}
             />
-            <Button text="Add" color={Colors.primary} handleClick={addMedicine} />
+            <Button text="Add" color={Colors.primary} handleClick={addDiagnostics} />
             {diagnostics.map((medicine, index) => (
                 <Medicine
                     key={index}

@@ -12,15 +12,16 @@ const DoctorList = (props) => {
     let offline = props.offline
     let status = ""
 
-    if(online && offline) {
+    if (online && offline) {
         status = "Online and Offline"
     } else if (online) {
         status = "Only Online"
-    } else if(offline) {
+    } else if (offline) {
         status = "Only Offline"
     } else {
         status = "Unavailable"
     }
+
     const [showInfo, setShow] = React.useState(false)
     const headerStyles = {
         backgroundColor: Colors.bg,
