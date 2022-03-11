@@ -1,10 +1,8 @@
 import React from 'react';
 import '../App.css';
-import MainLogo from '../Components/MainLogo'
 import Header from '../Components/Header'
 import Card from '../Components/Card'
 
-import LogoSrc from '../images/main_logo.png'
 import Colors from '../colorsPallate'
 
 const About = () => {
@@ -13,7 +11,6 @@ const About = () => {
 
     return (
         <div>
-            <MainLogo src={LogoSrc} />
             <Header title="About Us" />
             <Card content={content} />
         </div>

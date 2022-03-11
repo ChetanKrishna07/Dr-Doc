@@ -1,12 +1,10 @@
 import React from 'react';
 import '../App.css';
-import MainLogo from '../Components/MainLogo'
 import Header from '../Components/Header'
 import Input from '../Components/Input'
 import Button from '../Components/Button'
 import Doctor from '../Components/DoctorList'
 
-import LogoSrc from '../images/main_logo.png'
 import Colors from '../colorsPallate'
 
 const Medicines = () => {
@@ -31,7 +29,6 @@ const Medicines = () => {
 
     return (
         <div>
-            <MainLogo src={LogoSrc} />
             <Header title="Find Doctors" />
             <Input name="Specialist"
                 placeholder="Enter your specialist"

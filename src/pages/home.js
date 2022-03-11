@@ -1,10 +1,8 @@
 import React from 'react';
 import '../App.css';
-import MainLogo from '../Components/MainLogo'
 import Header from '../Components/Header'
 import Card from '../Components/Card'
 
-import LogoSrc from '../images/main_logo.png'
 import Colors from '../colorsPallate'
 
 const Support = () => {
@@ -43,7 +41,6 @@ const Support = () => {
 
     return (
         <div>
-            <MainLogo src={LogoSrc} />
             <div style={cardStyle}>
                 <span style={contentStyle}>One destination for all your medical needs</span>
             </div>

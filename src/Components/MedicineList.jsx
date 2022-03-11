@@ -32,7 +32,7 @@ const Medicine = (props) => {
 
     return (
         <div style={{ display: "flex", justifyContent: "center", marginBottom: 10 }}>
-            <div class='medicine' style={customStyle}>
+            <div className='medicine' style={customStyle}>
                 <li style={listStyle}>{props.name}</li>
                 <Button style={buttonStyle} onClick={() => {
                     props.handleClick(props.index)

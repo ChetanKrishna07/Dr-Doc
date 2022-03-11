@@ -1,13 +1,11 @@
 import React from 'react';
 import '../App.css';
-import MainLogo from '../Components/MainLogo'
 import Header from '../Components/Header'
 import Input from '../Components/Input'
 import Button from '../Components/Button'
 import Medicine from '../Components/MedicineList'
 import Store from '../Components/Store'
 
-import LogoSrc from '../images/main_logo.png'
 import Colors from '../colorsPallate'
 
 const Diagnostics = () => {
@@ -69,7 +67,6 @@ const Diagnostics = () => {
     return (
         <div>
 
-            <MainLogo src={LogoSrc} />
             <Header title="Find Diagnostics" />
             <Input name="Diagnostics"
                 placeholder="Enter your test name"

@@ -1,6 +1,5 @@
 import React from 'react';
 import '../App.css';
-import MainLogo from '../Components/MainLogo'
 import Header from '../Components/Header'
 import Input from '../Components/Input'
 import Button from '../Components/Button'
@@ -8,7 +7,6 @@ import Medicine from '../Components/MedicineList'
 import Store from '../Components/Store'
 import axios from 'axios'
 
-import LogoSrc from '../images/main_logo.png'
 import Colors from '../colorsPallate'
 
 const Medicines = () => {
@@ -50,7 +48,6 @@ const Medicines = () => {
 
     return (
         <div>
-            <MainLogo src={LogoSrc} />
             <Header title="Find Medicines" />
             <Input name="Medicine"
                 placeholder="Enter your medicine name"
