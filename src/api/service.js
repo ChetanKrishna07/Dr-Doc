@@ -64,7 +64,6 @@ app.post("/store", (req, res) => {
     res.send(stores)
 })
 
-
 app.listen(port, () => {
     console.log(`Server running in localhost:${port}`)
 })

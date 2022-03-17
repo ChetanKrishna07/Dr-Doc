@@ -5,7 +5,7 @@ import Card from '../Components/Card'
 
 import Colors from '../colorsPallate'
 
-const Support = () => {
+const Home = () => {
 
     // backgroundColor: Colors.primary,
     // width: '100%',
@@ -53,4 +53,4 @@ const Support = () => {
 
 }
 
-export default Support;
+export default Home;
