@@ -1,6 +1,8 @@
 const express = require('express')
 const cors = require('cors')
 const bodyParser = require('body-parser')
+const mongoose = require('mongoose')
+const Medicine = require('./models/medicines')
 
 const app = express()
 const port = 2000
@@ -9,27 +11,41 @@ app.use(cors())
 app.use(bodyParser.json());
 app.use(bodyParser({ urlencoded: true }))
 
-const storList = [
-    {
-        name: "Appolo Pharmacy",
-        availableList: ['med 1', 'med 2', 'med 3']
-    },
-    {
-        name: "Medplus",
-        availableList: ['med 1', 'med 2']
-    },
-    {
-        name: "JSS",
-        availableList: ['med 1']
-    },
-    {
-        name: "ESI Pharmacy",
-        availableList: ['med 2']
+mongoose.connect(
+    'mongodb+srv://chetan:Shcsl1702@cluster0.u7j2y.mongodb.net/DrDoc?retryWrites=true&w=majority',
+    (err) => {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log("Connected to db");
+        }
     }
-]
+)
 
-app.post("/store", (req, res) => {
+
+
+// const storList = [
+//     {
+//         name: "Appolo Pharmacy",
+//         availableList: ['med 1', 'med 2', 'med 3']
+//     },
+//     {
+//         name: "Medplus",
+//         availableList: ['med 1', 'med 2']
+//     },
+//     {
+//         name: "JSS",
+//         availableList: ['med 1']
+//     },
+//     {
+//         name: "ESI Pharmacy",
+//         availableList: ['med 2']
+//     }
+// ]
+
+app.post("/store", async (req, res) => {
     console.log("Get request at /store")
+    let storList = await Medicine.find({})
     let meds = req.body.meds
     let medLen = meds.length
     let stores = []
