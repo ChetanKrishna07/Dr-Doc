@@ -46,9 +46,31 @@ const Login = () => {
         fontSize: '1.1em'
     }
 
+    const options = {
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        fontFamily: "Source Sans Pro",
+        fontWeight: 600,
+    }
+
     return (
         <div>
             <Header title="Login" />
+            <div style={options}>
+                <h1 style={{ marginRight: 50 }}>Patient</h1>
+                <h1>Doctor</h1>
+            </div>
+            <div style={
+                {
+                    border: "1px solid #989898",
+                    width: "400px",
+                    height: "1px",
+                    backgroundColor: "#989898",
+                    margin: "auto",
+                    marginBottom: "7 0px"
+                }
+            } ></div>
             <Input name="Mobile Number/Email"
                 placeholder="Mobile Number/Email"
                 type="email"
