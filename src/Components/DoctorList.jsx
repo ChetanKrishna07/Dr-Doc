@@ -6,8 +6,8 @@ const DoctorList = (props) => {
     let address = ['flat # 102, Classic Avenue', 'Street # 4, Czech Colony', 'Sanathnagar', 'Hyderbad - 500018']
     let phone = '+919999999999'
     let website = 'www.superdoc.com'
-    let specialization = "Cardialogit"
-    let education = ["MBBS, KMC", ["DMC Royal College of Liverpool"]]
+    // let specialization = "Cardialogit" 
+    // let education = ["MBBS, KMC", "DMC Royal College of Liverpool"]
     let online = props.online
     let offline = props.offline
     let status = ""
@@ -137,9 +137,9 @@ const DoctorList = (props) => {
                 </div>
                 <div style={infoSpEd}>
                     <h1 style={headings}>Specialization :</h1>
-                    <p>{specialization}</p>
+                    <p>{props.specialization}</p>
                     <h1 style={headings}>Education :</h1>
-                    {education.map((edd) => {
+                    {props.education.map((edd) => {
                         return <p style={addLine}>{edd},</p>
                     })}
                 </div>

@@ -3,6 +3,7 @@ const cors = require('cors')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const Medicine = require('./models/medicines')
+const Doctor = require('./models/doctors')
 
 const app = express()
 const port = 2000
@@ -22,26 +23,13 @@ mongoose.connect(
     }
 )
 
-
-
-// const storList = [
-//     {
-//         name: "Appolo Pharmacy",
-//         availableList: ['med 1', 'med 2', 'med 3']
-//     },
-//     {
-//         name: "Medplus",
-//         availableList: ['med 1', 'med 2']
-//     },
-//     {
-//         name: "JSS",
-//         availableList: ['med 1']
-//     },
-//     {
-//         name: "ESI Pharmacy",
-//         availableList: ['med 2']
-//     }
-// ]
+app.post('/doctor', async (req, res) => {
+    console.log('Get request at /doctor')
+    let specialization = req.body.specialization
+    let doctorList = await Doctor.find({ specialization: specialization })
+    console.log(doctorList)
+    res.send(doctorList)
+})
 
 app.post("/store", async (req, res) => {
     console.log("Get request at /store")
