@@ -11,8 +11,8 @@ const Card = (props) => {
 
     return (
         <div style={cardStyle}>
-            {props.content.map((line => {
-                return <p>{line}</p>
+            {props.content.map((element => {
+                return element
             }))}
         </div>
     )

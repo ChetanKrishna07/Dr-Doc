@@ -11,7 +11,7 @@ const Navigation = () => {
     }
 
     const navItems = {
-        color: Colors.tertiary
+        color: Colors.tertiary,
     }
 
     return (

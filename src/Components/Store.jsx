@@ -3,8 +3,6 @@ import Colors from '../colorsPallate'
 
 const Store = (props) => {
 
-    let medicinesAvail = ['Med 1', 'Med 2', 'Med 3']
-    let medicinesUnavail = ['Med 4', 'Med 5']
     let address = ['flat # 102, Classic Avenue', 'Street # 4, Czech Colony', 'Sanathnagar', 'Hyderbad - 500018']
     let phone = '+919999999999'
     let website = 'www.superdoc.com'
@@ -160,16 +158,16 @@ const Store = (props) => {
                 </div>
                 <div style={infoAddress}>
                     <h1 style={headings}>Address :</h1>
-                    {address.slice(0, -1).map((med) => {
+                    {props.address && props.address.slice(0, -1).map((med) => {
                         return <p style={addLine}>{med},</p>
                     })}
-                    <p style={addLine}>{address.slice(-1)}</p>
+                    <p style={addLine}>{props.address && props.address.slice(-1)}</p>
                 </div>
                 <div style={infoPhWeb}>
                     <h1 style={headings}>Phone number :</h1>
-                    <p>{phone}</p>
+                    <p>{props.phone}</p>
                     <h1 style={headings}>Website :</h1>
-                    {website}
+                    <a href={props.website}>{props.website}</a>
                 </div>
             </div>
         </div>

@@ -37,7 +37,12 @@ const Home = () => {
         color: Colors.bg
     }
 
-    const faq = ["Q1) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce finibus lobortis porta. Cras ac lorem at elit euismod sollicitudin in quis ligula.", "Ans) Lorem ipsum dolor sit amet, consectetur adipiscing elit.Fusce finibus lobortis porta.Cras ac lorem at elit euismod sollicitudin in quis ligula.", "Q2) bitasse platea dictumst.Nullam pellentesque malesuada neque, vel ornare enim cursus fermentum.Orci varius natoque penatibus et magnis dis parturient montes, nas", "Ans) lobortis sapien ac, ullamcorper tincidunt tortor.Sed rutrum tincidunt ligula ac rutrum.Cras dignissim leo nisi, ac consequat nunc facilisis id.Nunc imperdiet orci ut enim rhoncus, eu porta quam consequat"]
+    const faq = [
+        <p>Q1) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce finibus lobortis porta. Cras ac lorem at elit euismod sollicitudin in quis ligula.</p>,
+        <p>Ans) Lorem ipsum dolor sit amet, consectetur adipiscing elit.Fusce finibus lobortis porta.Cras ac lorem at elit euismod sollicitudin in quis ligula.</p>,
+        <p>Q2) bitasse platea dictumst.Nullam pellentesque malesuada neque, vel ornare enim cursus fermentum.Orci varius natoque penatibus et magnis dis parturient montes, nas</p>,
+        <p>Ans) lobortis sapien ac, ullamcorper tincidunt tortor.Sed rutrum tincidunt ligula ac rutrum.Cras dignissim leo nisi, ac consequat nunc facilisis id.Nunc imperdiet orci ut enim rhoncus, eu porta quam consequat</p>
+    ]
 
     return (
         <div>

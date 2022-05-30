@@ -6,9 +6,50 @@ import Colors from '../colorsPallate'
 
 const Footer = () => {
 
+    const [showServices, setShowServices] = React.useState(false)
+
     const footerStyle = {
         textAlign: 'center'
     }
+
+    function goHome() {
+        console.log("/");
+        window.location.href = "/"
+    }
+
+    function goAbout() {
+        console.log("/about");
+        window.location.href = "/about"
+    }
+
+    function goSupport() {
+        console.log("/support");
+        window.location.href = "/support"
+    }
+
+    function handleService() {
+        setShowServices(!showServices)
+    }
+
+    function goDoctor() {
+        console.log("/doctors");
+        window.location.href = "/doctors"
+    }
+
+    function goMedicine() {
+        console.log("/medicines");
+        window.location.href = "/medicines"
+    }
+
+    function goDiagnostics() {
+        console.log("/diagnostics");
+        window.location.href = "/diagnostics"
+    }
+
+    // function goHome() {
+    //     console.log("/");
+    //     window.location.href = "/"
+    // }
 
     const cardStyle = {
         backgroundColor: Colors.primary,
@@ -32,7 +73,6 @@ const Footer = () => {
         backgroundColor: Colors.primary,
         gridColumn: '2 / 4',
         gridRow: '1 / 2',
-        // border: '1px solid black',
         display: 'flex',
         alignItems: 'end'
     }
@@ -77,7 +117,8 @@ const Footer = () => {
         fontSize: '30px',
         marginRight: '1%',
         textAlign: 'left',
-        width: '30%'
+        width: '30%',
+        cursor: "pointer"
     }
 
     const rightItemsTwo = {
@@ -87,7 +128,8 @@ const Footer = () => {
         fontSize: '30px',
         marginRight: '1%',
         textAlign: 'left',
-        width: '30%'
+        width: '30%',
+        cursor: "pointer"
     }
 
     const rightItemsThree = {
@@ -99,6 +141,28 @@ const Footer = () => {
         textAlign: 'left',
         width: '30%'
     }
+
+    const services = {
+        position: "absolute",
+        borderRadius: '3px',
+        border: showServices ? '1px solid black' : 0,
+        padding: showServices ? '10px 30px 10px 10px' : '0px 30px 0px 10px',
+        gridColumn: '2 / 3',
+        gridRow: '1 / 2',
+        marginLeft: "54%",
+        marginTop: "105px",
+        transition: '0.3s',
+        height: showServices ? '123px' : 0,
+        overflow: 'hidden'
+    }
+
+    const service = {
+        padding: 0,
+        fontSize: "1.2em",
+        marginBottom: "5px",
+        cursor: "pointer"
+    }
+
     return (
         <div style={{ fontFamily: 'Source Sans Pro' }}>
             <div style={cardStyle}>
@@ -108,13 +172,18 @@ const Footer = () => {
                     </div>
                 </div>
                 <div style={rightOneStyle} >
-                    <span style={rightItemsOne}>Home</span>
-                    <span style={rightItemsOne}>Services</span>
-                    <span style={rightItemsOne}>blog</span>
+                    <span style={rightItemsOne} onClick={goHome}>Home</span>
+                    <span style={rightItemsOne} onClick={handleService}>Services</span>
+                    {/* <span style={rightItemsOne}>blog</span> */}
+                </div>
+                <div style={services}>
+                    <p onClick={goDoctor} style={service}>Find Doctor</p>
+                    <p onClick={goMedicine} style={service}>Medicines</p>
+                    <p onClick={goDiagnostics} style={service}>Diagnostics</p>
                 </div>
                 <div style={rightTwoStyle} >
-                    <span style={rightItemsTwo}>Support</span>
-                    <span style={rightItemsTwo}>About Us</span>
+                    <span style={rightItemsTwo} onClick={goSupport}>Support</span>
+                    <span style={rightItemsTwo} onClick={goAbout}>About Us</span>
                 </div>
                 <div style={rightThreeStyle} >
                     <span style={rightItemsThree}>+91 9999999999</span>
@@ -126,7 +195,7 @@ const Footer = () => {
                 <p>Copyright &copy; 2021 <br />
                     dr.doc</p>
             </div>
-        </div>
+        </div >
     )
 }
 

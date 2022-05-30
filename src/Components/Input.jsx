@@ -25,7 +25,6 @@ const Input = (props) => {
         <div style={inputGroup}>
             <Form.Label style={label}>{props.name}</Form.Label>
             <Form.Control
-                style={{ backgroundColor: Colors.bg }}
                 style={input} type={props.type}
                 placeholder={props.placeholder}
                 onChange={props.handleChange}

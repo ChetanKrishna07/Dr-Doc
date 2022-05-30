@@ -124,24 +124,25 @@ const DoctorList = (props) => {
             <div style={infoStyle}>
                 <div style={infoAddress}>
                     <h1 style={headings}>Address :</h1>
-                    {address.slice(0, -1).map((med) => {
+                    {props.address.slice(0, -1).map((med) => {
                         return <p style={addLine}>{med},</p>
                     })}
-                    <p style={addLine}>{address.slice(-1)}</p>
+                    <p style={addLine}>{props.address.slice(-1)}</p>
                 </div>
                 <div style={infoPhWeb}>
                     <h1 style={headings}>Phone number :</h1>
-                    <p>{phone}</p>
+                    <p>{props.phone}</p>
                     <h1 style={headings}>Website :</h1>
-                    {website}
+                    <a href={props.website}>{props.website}</a>
                 </div>
                 <div style={infoSpEd}>
                     <h1 style={headings}>Specialization :</h1>
                     <p>{props.specialization}</p>
                     <h1 style={headings}>Education :</h1>
-                    {props.education.map((edd) => {
+                    {props.education.slice(0, -1).map((edd) => {
                         return <p style={addLine}>{edd},</p>
                     })}
+                    <p style={addLine}>{props.education.slice(-1)}</p>
                 </div>
             </div>
         </div>

@@ -4,7 +4,6 @@ import Colors from '../colorsPallate'
 const Header = (props) => {
 
     const customStyles = {
-
         textAlign: 'center',
         fontWeight: 600,
         marginTop: 100,

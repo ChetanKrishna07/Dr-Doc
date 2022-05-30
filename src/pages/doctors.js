@@ -68,6 +68,9 @@ const Medicines = () => {
                     offline={doctor.offline}
                     specialization={doctor.specialization}
                     education={doctor.education}
+                    address={doctor.address}
+                    phone={doctor.phone}
+                    website={doctor.website}
                 />
             ))}
             {/* {doctors.length > 0 && <Doctor doctorName={doctors[0].name} />} */}

@@ -73,6 +73,9 @@ const Medicines = () => {
                     unavailable={store.unavailable}
                     availableList={store.availableList}
                     unavailableList={store.unavailableList}
+                    address={store.address}
+                    phone={store.phone}
+                    website={store.website}
                 />
             ))}
         </div>
