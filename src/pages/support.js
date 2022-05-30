@@ -99,7 +99,11 @@ const Support = () => {
         } else {
             setRequiredQuery(false)
         }
-        if (!(emailText.includes('@') && (emailText.indexOf('@') + 1) < emailText.indexOf('.') && !emailText.endsWith('.')) && emailText != '') {
+        if (!(emailText.includes('@') && !emailText.endsWith('.') 
+            && emailText.substring(emailText.indexOf('@')).includes('.') 
+            && emailText.substring(emailText.indexOf('@'))[1] != '.') 
+            && emailText != '') 
+        {
             setInvalidEmail(true)
             valid = false
         } else {
