@@ -7,6 +7,10 @@
 Dr. Doc is a platform where patients can find doctors and cure themselves to their diseases. This platform also have a feature recommending the specialist for their problem if patient doesn't know to whom they need to consult. This platform also facilitates the information regarding the diagnostic centers with the diagnosis they facilitate, also gives information about the medicines in which medical shop they can find their medicines.
 There will be unique account for patients and doctors linked with their email and/or phone number. By the ML model, with symptoms as input from patients, patients can find out which doctor they need to consult.
 
+## To-DO
+- Incorporating the ML Model for recomending specialists.
+- Login Service
+
 ## Tools Used
 
 #### Front End
